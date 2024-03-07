@@ -1,4 +1,4 @@
 <?php get_header(); ?>
-<p>aaa</p>
+<p>aaatest2</p>
 	              	        
 <?php get_footer(); ?>
