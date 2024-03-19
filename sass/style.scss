@@ -1,6 +1,0 @@
-@use "variable" as v;
-
-body {
-  color: v.$font-color;
-  background-color: v.$bg-color;
-}

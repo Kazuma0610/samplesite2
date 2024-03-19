@@ -9,21 +9,14 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 
 //CSSの読み込み
-add_action('wp_enqueue_scripts', 'add_styles');
-  function add_styles() {
-    // スタイルシートの登録と読み込み
-    wp_register_style(
-        'main_style',
-        get_template_directory_uri() . '/css/style.css',
-        array(),
-        '1.0' 
-      ); 
-  }
+function my_enqueue_scripts()
+{
+  $version = wp_get_theme()->get( 'Version' );
 
-//JSの読み込み//
-function my_scripts() {
-    wp_enqueue_script( 'script-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
-  }
-add_action( 'wp_enqueue_scripts', 'my_scripts' );
+  wp_enqueue_style('move-style', get_template_directory_uri() . '/css/move.css', array(), $version);
+  wp_enqueue_style('test-style', get_template_directory_uri() . '/css/test.css', array(), $version);
+  wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('jquery'), $version, true);
+  wp_enqueue_script('move-script', get_template_directory_uri() . '/js/move.js', array('jquery'), $version, true);
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
-?>
