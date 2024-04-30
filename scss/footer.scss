@@ -1,0 +1,18 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+#footer{
+    /*他ページのフッター設定*/
+    .footer-contents-page{
+      padding: 5px;
+      background-color: #000;
+      width: 100%;
+      position: absolute;/*フッターが一番下に配置できない現象が起こりこれで対策*/
+      bottom: 0px;/*フッターが一番下に配置できない現象が起こりこれで対策*/
+      p{
+        font-weight: bold;
+        font-size: 15px;
+        color: #fff;
+        }
+    }
+}

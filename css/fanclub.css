@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/*色の設定*/ /*レスポンシブル*/
+/*文字フォント*/
+#left5 .sp-bottom {
+  text-align: center;
+  height: 100%;
+}
+#left5 .sp-bottom h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+@media (min-width: 38.25em) {
+  #left5 .sp-bottom h2 {
+    font-size: 40px;
+  }
+}
+#left5 .fan-container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30%;
+}
+@media (min-width: 38.25em) {
+  #left5 .fan-container {
+    margin-top: 200px;
+  }
+}
+#left5 .fan-container .pro-wrapper {
+  margin: 0 auto;
+}
+
+/*FAN-CLUBページ*/
+/*基本設定*/
+.fan-club-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #efefef;
+  padding: 0 20px 20px 20px;
+}
+@media (min-width: 38.25em) {
+  .fan-club-container {
+    padding: 0 50px 50px 50px;
+  }
+}
+.fan-club-container .page-header {
+  margin: 0 auto;
+}
+.fan-club-container .page-header .entry-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 30px 10px 0px;
+}
+@media (min-width: 38.25em) {
+  .fan-club-container .page-header .entry-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px 30px 30px 0px;
+  }
+}
+
+.fan-club-area {
+  padding: 20px;
+  background-color: #F1F7FB;
+}
+@media (min-width: 38.25em) {
+  .fan-club-area {
+    padding: 50px;
+    padding-top: 20px;
+  }
+}
+.fan-club-area .fan-sub {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #000;
+}
+.fan-club-area .fan-sub-second {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 40px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #000;
+}
+@media (min-width: 38.25em) {
+  .fan-club-area .fan-sub-second {
+    margin-top: 70px;
+  }
+}
+.fan-club-area ul li h3 {
+  padding: 10px 0 10px 0;
+}
+.fan-club-area ul li .fan-text {
+  font-size: 15px;
+  padding-left: 1rem;
+}
+.fan-club-area ul li .fan-sub-text-first {
+  font-size: 10px;
+  padding: 5px;
+  padding-left: 1rem;
+  margin-top: 10px;
+}
+.fan-club-area ul li .fan-sub-text {
+  font-size: 10px;
+  padding: 5px;
+  padding-left: 1rem;
+}
+.fan-club-area ul li:not(:first-child) {
+  margin-top: 20px;
+}
+
+/*ボタンの設定*/
+.btn-wrap {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/*10番目*/
+.edit_10th, a.btn-border-2::after, a.btn-border-2::before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  content: "";
+  transition: all 0.3s;
+  background: #000;
+}
+
+a.btn-border-2 {
+  border-radius: 0;
+  margin: 0px 0 50px 0;
+}
+@media (min-width: 38.25em) {
+  a.btn-border-2 {
+    margin: 100px 0 50px 0;
+  }
+}
+
+a.btn-border-2::before {
+  top: 0;
+  left: 0;
+}
+
+a.btn-border-2::after {
+  right: 0;
+  bottom: 0;
+}
+
+a.btn-border-2:hover {
+  background: #abb8c3;
+}
+
+a.btn-border-2:hover::before {
+  width: 0;
+}
+
+a.btn-border-2:hover::after {
+  width: 0;
+}

@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/*色の設定*/ /*レスポンシブル*/
+/*文字フォント*/
+#left4 .sp-bottom {
+  text-align: center;
+  height: 100%;
+}
+#left4 .sp-bottom h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+@media (min-width: 38.25em) {
+  #left4 .sp-bottom h2 {
+    font-size: 40px;
+  }
+}
+#left4 .pro-container {
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 38.25em) {
+  #left4 .pro-container {
+    margin-top: 150px;
+  }
+}
+@media (min-width: 1030px) {
+  #left4 .pro-container {
+    margin-top: 200px;
+  }
+}
+#left4 .pro-container .pro-wrapper {
+  margin: 0 auto;
+}
+
+/*------------------------*/
+/*写真のswiper設定*/
+.pro-contents {
+  max-width: 350px;
+  margin: 0 auto;
+}
+@media (min-width: 1030px) {
+  .pro-contents {
+    min-width: 500px;
+  }
+}
+
+.swiper {
+  width: 70%;
+  position: relative;
+}
+@media (min-width: 1030px) {
+  .swiper {
+    width: 50%;
+  }
+}
+.swiper img {
+  width: 100%;
+}
+
+/*------------------------*/
+/*写真のテキスト設定*/
+.prof-name {
+  position: absolute;
+  bottom: 20px;
+  left: 65px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #fff;
+}
+@media (min-width: 1030px) {
+  .prof-name {
+    bottom: 20px;
+    left: 70px;
+  }
+}
+
+/*------------------------*/
+/*SNSのアイコン設定*/
+.sns-wrapper {
+  margin: 20px;
+}
+.sns-wrapper ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.sns-wrapper ul .x-icon img {
+  width: 35px;
+  height: 35px;
+}
+.sns-wrapper ul .insta-icon {
+  width: 40px;
+  height: 40px;
+}
+.sns-wrapper ul .facebook-icon {
+  width: 40px;
+  height: 40px;
+}

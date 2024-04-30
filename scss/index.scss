@@ -1,0 +1,345 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+/*全体のエリア設定*/
+.ms-section{
+    color:#000;
+    padding:20px;
+    position: relative;
+    z-index: 1;
+    a{
+        color:#000;
+    }
+  }
+
+  
+/*MVエリアの設定*/
+
+.particle{ 
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index:-1;/*描画を一番下に*/
+}
+
+/*1文字出現してくる*/
+.eachTextAnime{
+    font-size: 50px;
+    color: #D83E3E;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    letter-spacing: 0.1em;
+    width: 10em;
+}
+.eachTextAnime span{opacity: 0;}
+.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
+@keyframes text_anime_on {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+/*右にある丸ナビゲーション色*/
+#multiscroll-nav span{
+    background:transparent!important;
+    border-color:#fff!important;
+    z-index: 999;
+  }
+  
+/*右にある丸のナビゲーション現在地色*/
+#multiscroll-nav li .active span{
+    background:#fff!important;
+    z-index: 999;
+  }
+
+/*スクロールダウン全体の場所*/
+.scrolldown1{
+  /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  right:420px;
+  bottom:80px;
+  /*全体の高さ*/
+  height:50px;
+  span{
+    /*描画位置*/
+    position: absolute;
+    left:360px;
+    top: -20px;
+    /*テキストの形状*/
+    color: #eee;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+  &::after{
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    left:380px;
+    top: 0;
+    /*線の形状*/
+    width: 1px;
+    height: 50px;
+    background: #eee;
+    /*線の動き1.4秒かけて動く。永遠にループ*/
+    animation: pathmove 1.4s ease-in-out infinite;
+    opacity:0;
+  }
+}
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove{
+0%{
+  height:0;
+  top:0;
+  opacity: 0;
+}
+30%{
+  height:50px;
+  opacity: 1;
+}
+100%{
+  height:0;
+  top:50px;
+  opacity: 0;
+}
+}
+
+/*MVエリアの設定*/
+
+/*PC画像設定*/
+#left1{
+  background:url("../images/pc_mv_01.png") no-repeat center;
+  background-size:cover;
+}
+
+#right1{
+    background:url("../images/pc_mv_02.png") no-repeat center;
+    background-size:cover;
+  }
+  
+#right2{
+    background:url("../images/pc1.png") no-repeat center;
+    background-size:cover;
+  }
+  
+#right3{
+    background:url("../images/pc2.png") no-repeat center;
+    background-size:cover;
+  }
+  
+#right4{
+    background:url("../images/pc3.png") no-repeat center;
+    background-size:cover;
+  }
+  
+#right5{
+    background:url("../images/pc4.png") no-repeat center;
+    background-size:cover;
+  }
+  
+#right6{
+    background:url("../images/pc5.png") no-repeat center;
+    background-size:cover;
+  }
+
+  .scrolldown-sp{
+    display: none;
+  }
+
+  @media screen and (max-width:1024px){
+    /*tablet画像設定*/
+     #left1{
+      background:url("../images/mv_ipad_01.png") no-repeat center;
+      background-size:cover;
+      }
+     #right1{
+      background:url("../images/mv_ipad_02.png") no-repeat center;
+      background-size:cover;
+      }
+      /*MVタイトル1文字出現してくる*/
+     .eachTextAnime{
+      font-size: 35px;
+      width: 10em;
+    }
+    }
+  
+  @media screen and (max-width:768px){
+      /*tablet画像設定*/
+       #left1{
+        background:url("../images/mv_ipad_01.png") no-repeat center;
+        background-size:cover;
+        }
+       #right1{
+        background:url("../images/mv_ipad_02.png") no-repeat center;
+        background-size:cover;
+        }
+        /*MVタイトル1文字出現してくる*/
+       .eachTextAnime{
+        font-size: 30px;
+        width: 10em;
+    }
+    }
+  
+
+  @media screen and (max-width:750px){
+    /*ライブラリで天地中央になっている見せ方を上揃えに上書き*/
+    .ms-tableCell{
+      vertical-align:top;
+    }
+
+    /*右上ナビゲーションと右エリア非表示*/
+    #menu,
+    .ms-right{
+      display: none!important;
+    }
+
+    /*1文字出現してくる*/
+    .eachTextAnime{
+      font-size: 30px;
+      width: 9em;
+    }
+    /*マルチスクロールの設定*/
+    #multiscroll-nav{
+      z-index: 999;
+    }
+
+    /*スクロールダウン全体の場所*/
+    .scrolldown-sp{
+      display: block;
+      /*描画位置※位置は適宜調整してください*/
+      position:absolute;
+      right:420px;
+      bottom:80px;
+      /*全体の高さ*/
+      height:50px;
+        span{
+          /*描画位置*/
+          position: absolute;
+          left:355px;
+          top: 30px;
+          /*テキストの形状*/
+          color: #eee;
+          font-size: 1rem;
+          letter-spacing: 0.05em;
+        }
+        &::after{
+          content: "";
+          /*描画位置*/
+          position: absolute;
+          left:380px;
+          top: 0;
+          /*線の形状*/
+          width: 1px;
+          height: 50px;
+          background: #eee;
+          /*線の動き1.4秒かけて動く。永遠にループ*/
+          animation: pathmove-sp 1.4s ease-in-out infinite;
+          opacity:0;
+        }
+      }
+      /*高さ・位置・透過が変化して線が上から下に動く*/
+      @keyframes pathmove-sp{
+        0%{
+          height:0;
+          top:0;
+          opacity: 0;
+        }
+        30%{
+          height:50px;
+          opacity: 1;
+        }
+        100%{
+          height:0;
+          top:-50px;
+          opacity: 0;
+        }
+      }
+    
+    /*左エリアを横幅100%にして画像＋テキストを出す設定*/
+    .ms-left{
+      width:100%!important;
+      z-index: 999;
+    }
+    
+    /*左エリア上部画像設定*/
+    .sp-top{
+      height:25%;
+      margin:0 0 20px 0;
+    }
+    /*sp画像設定*/
+     #left1{
+      background:url("../images/mv_sp.png") no-repeat center;
+      background-size:cover;
+      }
+     #left2{
+       .sp-top{
+       height: 5%;
+       }	
+      }
+     #left3{
+       .sp-top{
+       height: 5%;
+      }	
+      }
+     #left4{
+       .sp-top{
+       height: 5%;
+      }	
+      }
+     #left5{
+       .sp-top{
+        background:url("../images/pc4.png") no-repeat center;
+        background-size:cover;
+      }	
+      } 
+     #left6{
+       .sp-top{
+        background:url("../images/pc5.png") no-repeat center;
+        background-size:cover;
+      }	
+      } 
+    }
+@media screen and (max-width:450px){
+  /*マルチスクロールの位置*/
+  #multiscroll-nav ul {
+    display: none;
+    position: absolute;
+    top: 180px;
+    right: 330px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+  }
+
+/*section6のフッター設定*/
+.footer-contents{
+      padding: 1px;
+      background-color: #000;
+      position: absolute;
+      bottom: 40px;
+      left: 0px;
+      width: 100%;
+      p{
+          font-weight: bold;
+          font-size: 15px;
+          color: #fff;
+      }
+}
+.footer-contents-page{
+  text-align: center;
+  padding: 5px;
+  background-color: #000;
+  width: 100%;
+  position: absolute;/*フッターが一番下に配置できない現象が起こりこれで対策*/
+  bottom: 0px;/*フッターが一番下に配置できない現象が起こりこれで対策*/
+  p{
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    }
+}

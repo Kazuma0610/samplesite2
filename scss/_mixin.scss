@@ -1,0 +1,30 @@
+/*レスポンシブル*/
+@mixin breakpoint($point) {
+	@if $point == mini {
+		@media (min-width: 400px) {
+			@content;
+		}
+	}
+	@if $point == tablet {
+		@media (min-width: 38.25em) {
+			@content;
+		}
+	}
+    @if $point == only-tab {
+		@media (min-width: 880px) {
+			@content;
+		}
+	}
+	@if $point == pc {
+		@media (min-width: 1030px) {
+			@content;
+		}
+	}
+    
+}
+
+/*文字フォント*/
+@mixin font{
+    font-family: 'Oswald';
+}
+

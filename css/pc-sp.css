@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/*　SP用のスタイル*/
+.sp-only {
+  display: block;
+}
+
+.pc-only {
+  display: none;
+}
+
+/*　PC用のスタイル */
+@media screen and (min-width: 880px) {
+  .sp-only {
+    display: none;
+  }
+  .pc-only {
+    display: block;
+  }
+}
