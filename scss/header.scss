@@ -88,6 +88,9 @@
     position: relative;
     bottom:5px;
     margin-left: 20px;
+    @include m.breakpoint(only-tab){
+        display: none;
+    }
 }
 
 

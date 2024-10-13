@@ -85,6 +85,11 @@
   bottom: 5px;
   margin-left: 20px;
 }
+@media (min-width: 880px) {
+  .sp_logo {
+    display: none;
+  }
+}
 
 /*========= ボタンのためのCSS ===============*/
 .openbtn {

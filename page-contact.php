@@ -173,7 +173,7 @@
 
 					<div class="btn-wrap">
                       <buttun>
-                        <a href="https://ec-daieirecord.com/#area6" class="btn btn-flat btn-bottom"><span>BACK</span></a>
+                        <a href="https://ec-daieirecord.com/#area7" class="btn btn-flat btn-bottom"><span>BACK</span></a>
                       </buttun>
                     </div>
                     

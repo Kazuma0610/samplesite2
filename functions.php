@@ -14,6 +14,54 @@ add_theme_support( 'automatic-feed-links' );
 //アイキャッチ画像を使用する設定
 add_theme_support( 'post-thumbnails' );
 
+//CDN形式のCSSとJSの読み込み
+function add_my_files() {
+  wp_enqueue_style(
+  'fontawesome4.7',  //$handle
+  '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  //$src
+  );
+  wp_enqueue_style(
+    'fontawesome5.15.4',  //$handle
+    '//use.fontawesome.com/releases/v5.15.4/css/all.css'  //$src
+    );
+  wp_enqueue_style(
+    'fontawesome6.5.1',  //$handle
+    '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'  //$src
+    );
+  wp_enqueue_style(
+    'font_notoserifjp',  //$handle
+    'https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet'  //$src
+    );
+  wp_enqueue_style(
+    'font_Oswald',  //$handle
+    'https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet'  //$src
+    );
+  wp_enqueue_style(
+    'owlcarouse_2',  //$handle
+    '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet'  //$src
+    );
+  wp_enqueue_style(
+    'swiper_v9',  //$handle
+    '//cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css' //$src
+    );
+  wp_enqueue_script(
+    'swiper_v9',  //$handle
+    '//cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js',  //$src
+    array(),  //$deps
+    null,  //$ver
+    true  //$in_footer
+    );
+  wp_enqueue_script(
+    'particles',  //$handle
+    '//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js',  //$src
+    array(),  //$deps
+    null,  //$ver
+    true  //$in_footer
+    );
+}
+add_action( 'wp_enqueue_scripts', 'add_my_files' );
+
+
 //CSSの読み込み
 function my_enqueue_scripts()
 {

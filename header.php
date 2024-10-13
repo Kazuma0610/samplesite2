@@ -4,17 +4,10 @@
 <meta charset="<?php bloginfo('charset'); ?>"/><!--エンコードがUTF-8であることを指定-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0 "><!--viewportの設定-->
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"><!--スタイルシートの呼び出し-->
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><!--fontawesomeの呼び出しCDNコード-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"><!--fontawesomeの呼び出しCDNコード-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><!--6verの最新fontawesomeの呼び出しCDNコード-->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet"><!--notoserifjpフォント-->
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet"><!--Oswaldフォント-->
-<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/><!--SwiperのCSS-->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script><!--SwiperのCDN-->
+<?php wp_head(); ?><!--システム・プラグイン用-->
 <?php if ( is_home() ): ?>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.2/jquery.multiscroll.css"><!--画面2分割のcss-->
 <?php endif; ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script><!--cookie用-->
 <?php if ( is_home() ): ?>
@@ -23,8 +16,6 @@
 <?php if ( is_home() ): ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script><!--画面2分割用(2)のJS-->
 <?php endif; ?>
-<script src="js/5-1-11.js"></script><!--for--nav-js-->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <style type="text/css">
   <?php if ( is_home() ): ?>
     .site-header{
@@ -46,7 +37,6 @@
     }
   <?php endif; ?>
 </style><!--フッターが一番下に配置できない現象が起こりこれで対-->
-<?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>

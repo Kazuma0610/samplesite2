@@ -41,14 +41,14 @@
                         </ul>
                         <div class="btn-wrap">
                           <buttun>
-                            <a href="https://ec-daieirecord.com/#area5" class="btn btn-border-2"><span>入会ページに進む</span></a>
+                            <a href="https://ec-daieirecord.com/#area6" class="btn btn-border-2"><span>入会ページに進む</span></a>
                           </buttun>
                         </div>
                     </div><!--fan-club-area-->
 
                     <div class="btn-wrap">
                       <buttun>
-                        <a href="https://ec-daieirecord.com/#area5" class="btn btn-flat btn-bottom"><span>BACK</span></a>
+                        <a href="https://ec-daieirecord.com/#area6" class="btn btn-flat btn-bottom"><span>BACK</span></a>
                       </buttun>
                     </div>
                     
