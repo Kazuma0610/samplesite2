@@ -1,0 +1,214 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+/*movie設定*/
+#video-area{
+    position: absolute;
+    top: -20px;
+    right:0;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+  }
+  #video {
+    position: relative;
+    right:350px;
+    /*縦横幅指定*/
+    height: 100%; 
+    min-height: 100%;
+    min-width: 100%;
+  }
+  @media screen and (max-width:1024px){
+    #video-area{
+      top: -40px;
+    }
+    #video {
+      position: relative;
+      right:900px;
+    }
+  }
+  @media screen and (max-width:700px){
+    #video-area{
+      top: -40px;
+    }
+    #video {
+      position: relative;
+      right:650px;
+    }
+  }
+  #video2{
+    position: relative;
+    right:350px;
+    /*縦横幅指定*/
+    height: 100%; 
+    min-height: 100%;
+    min-width: 100%;
+  }
+  @media screen and (max-width:1024px){
+    #video2 {
+      position: relative;
+      right:750px;
+    }
+  }
+  @media screen and (max-width:700px){
+    #video2 {
+      position: relative;
+      right:450px;
+    }
+  }
+
+/*movieの中のテキストの設定*/
+.music-text{
+    position: relative;
+    right: 53%;
+    z-index: 9999;
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.9);
+    margin: 0 auto;
+    letter-spacing: 5px;
+}
+.btn-music{
+    margin-top: -35px!important;
+}
+.music-text-sp{
+  display: none;
+}
+
+@media screen and (max-width:700px){
+    .music-text{
+        display: none;
+    }
+    .music-text-sp{
+      display: block;
+      position: relative;
+      bottom:100px;
+      z-index: 9999;
+      font-size: 50px;
+      font-weight: bold;
+      color: red;
+      text-align: center;
+      padding: 10px;
+      background-color: rgba(255,255,255,0.5);
+      margin: 0 auto;
+      letter-spacing: 5px;
+    }
+}
+
+
+/*基本設定*/
+.music-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color:#efefef ;
+  padding: 0 20px 20px 20px;
+  @include m.breakpoint(tablet){
+      padding: 0 50px 50px 50px;
+  }
+  .page-header{
+      margin: 0 auto;
+      .entry-title{
+          font-size: 20px;
+          font-weight: bold;
+          margin: 10px 30px 10px 0px;
+          @include m.breakpoint(tablet){
+              font-size: 40px;
+              font-weight: bold;
+              margin: 30px 30px 30px 0px;
+          }
+      }
+  }
+}
+
+/*リストのwrapper設定*/
+.music-area{
+  max-width: 1000px;
+  margin: 0 auto;
+  .pagination{
+      text-align: center;
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: #fff;
+        @include m.breakpoint(tablet){
+          padding-top: 40px;
+        padding-bottom: 40px;
+      }
+        li{
+          width: calc(40% - 50px / 2);
+          background:#fff;
+          padding: 20px;
+          &:hover{
+            box-shadow: 0px 1px 20px rgba(104, 99, 107, 0.9);
+            transform: translateY(4px);
+        }
+        }
+      }
+  }
+}
+
+/*リスト内設定*/
+.music-inner{
+  position: relative;
+  .info-inner{
+    font-size: 15px;
+    letter-spacing: 1px;
+    .product-title{
+      text-align: left;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    @at-root.product-tag{
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 10px;
+        color: red;
+        font-weight: bold;
+        padding: 3px;
+        background-color: #fff;
+        @include m.breakpoint(tablet){
+          padding: 10px;
+        }
+        li {
+            text-align: left;
+            margin-top: 0px;
+            font-size: 10px;
+            border: 1px solid;
+            padding: 2px;
+            margin: 2px;
+        }
+    }
+  }
+  .block_date_inner{
+      text-align: left;
+      padding: 10px;
+      background-color: rgba(188, 184, 190, 0.5);
+      color: #000;
+      letter-spacing: 0.03em;
+      border-bottom-right-radius: 20px;
+      .product_date{
+          display: flex;
+          font-size: 10px;
+          .sub-date{
+              -ms-writing-mode: tb-rl;
+              writing-mode: vertical-rl;
+              font-size: 10px;
+              padding-left: 5px;
+          }
+      }
+      .category{
+          font-size: 10px;
+      }
+  }
+  
+}
+

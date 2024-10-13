@@ -1,0 +1,49 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+/*基本設定*/
+.site-main{
+    max-width: 1000px;
+    margin: 0 auto;
+    .type-post{
+        background-color: #fff;
+        margin: 20px;
+        padding: 20px;
+        padding-top: 10px;
+        @include m.breakpoint(tablet){
+            margin: 20px;
+            padding: 50px;
+            padding-top: 30px;
+        }
+        .entry-post-title{
+            font-size: 20px;
+            letter-spacing: 2px;
+            @include m.breakpoint(tablet){
+                font-size: 40px;
+                letter-spacing: 3px;
+            }
+        }
+        .post-thumbnail{
+            text-align: center;
+        }
+        .date-post{
+            padding: 10px;
+        }
+        .sabu-title{
+            padding: 20px;
+        }
+        .live-text{
+            letter-spacing: 2px;
+        }
+    }
+}
+
+/*ページネーション*/
+.post__pagination{
+    margin: 30px;
+}
+
+/*ボタン*/
+.btn-wrap{
+    text-align: center;
+}

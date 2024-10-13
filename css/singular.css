@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/*色の設定*/ /*レスポンシブル*/
+/*文字フォント*/
+/*基本設定*/
+.site-main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.site-main .type-post {
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 10px;
+}
+@media (min-width: 38.25em) {
+  .site-main .type-post {
+    margin: 20px;
+    padding: 50px;
+    padding-top: 30px;
+  }
+}
+.site-main .type-post .entry-post-title {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+@media (min-width: 38.25em) {
+  .site-main .type-post .entry-post-title {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+}
+.site-main .type-post .post-thumbnail {
+  text-align: center;
+}
+.site-main .type-post .date-post {
+  padding: 10px;
+}
+.site-main .type-post .sabu-title {
+  padding: 20px;
+}
+.site-main .type-post .live-text {
+  letter-spacing: 2px;
+}
+
+/*ページネーション*/
+.post__pagination {
+  margin: 30px;
+}
+
+/*ボタン*/
+.btn-wrap {
+  text-align: center;
+}

@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+/*---------------サイトの基本設定---------------*/
+
+/*cssのリセット*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,abbr,address,cite,code,del,dfn,em,img,
+ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,
+ol,ul,li,fieldset,form,label,legend,table,caption,
+tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
+figcaption,figure,footer,header,hgroup,menu,nav,section,
+summary,time,mark,audio,video {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+/*html&bodyの設定*/
+html{
+	height: 100%;/*フッターが一番下に配置できない現象が起こりこれで対策*/
+	overflow-x: hidden;
+	
+}
+.my-body-class {
+	margin: 0;
+	padding: 0;
+	line-height: 1.8;
+	background: #efefef;
+	width: 100%;
+	min-height: 100%;/*フッターが一番下に配置できない現象が起こりこれで対策*/
+	overflow-x: hidden;
+}
+
+/* - -  h1.h2.h3....  - - */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #000;
+  }
+
+/* -- a -- */
+a {
+	color: #333;
+	text-decoration: none;
+	outline: none;
+}
+
+a, a > img {
+	-webkit-transition: .2s;
+	-moz-transition: .2s;
+	-ms-transition: .2s;
+	-o-transition: .2s;
+	transition: .2s;
+}
+
+/* -- img -- */
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+/* -- ul -- */
+ul {
+	list-style: none;
+}
+li{
+	list-style: none;
+}
+
+/* -- :hover -- */
+a:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+	cursor: pointer;
+}
+
+/* -- Font Family -- */
+body {
+	font-family: "Oswald", "YakuHanJPs_Noto", "Roboto", "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", "YuGothic", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+/*メイン画面以外の設定*/
+.content-area{
+	box-sizing: border-box;
+	width: 100%;
+	padding-top: 0.5rem;/*2rem*/
+	background-color: #efefef;
+  }
+.contents-main{
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+}
+
+/*パンクズの設定*/
+.breadcrumb{
+	font-size: 10px;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-top: 20px;
+	text-align: left;
+	background: #efefef;
+	margin-left: 20px;
+}
+.breadcrumb p{
+	margin: 0 auto;
+	padding: 5px;
+}
+.breadcrumb span{
+	padding:0 10px 0 10px;
+}
+.breadcrumb span:nth-child(1){
+	padding-left: 0px;
+}
+@media (min-width: 700px) {
+	.breadcrumb{
+		margin-left: 40px;
+	}
+  }
+@media (min-width: 880px) {
+	.breadcrumb{
+		font-size: 15px;
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 20px;
+		text-align: left;
+		background: #efefef;
+	}
+  }
+/*---------------サイトの基本設定---------------*/
+

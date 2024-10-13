@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*色の設定*/ /*レスポンシブル*/
+/*文字フォント*/
+/*基本設定*/
+.live-sch-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.entry-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 30px 30px 30px 0px;
+}
+
+/*tabの形状*/
+.live-tab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px;
+}
+
+.live-tab li a {
+  display: block;
+  background: #ddd;
+  margin: 0 2px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+}
+@media (min-width: 38.25em) {
+  .live-tab li a {
+    font-size: 20px;
+  }
+}
+@media (min-width: 880px) {
+  .live-tab li a {
+    padding: 10px 20px;
+  }
+}
+
+/*タブの選択時の色*/
+.tab__item:first-child a.selected {
+  background-color: #fff;
+}
+
+.tab__item:nth-child(2) a.selected {
+  background-color: #fff;
+}
+
+.tab__item:nth-child(3) a.selected {
+  background-color: #fff;
+}
+
+.tab__item:nth-child(4) a.selected {
+  background-color: #fff;
+}
+
+.tab__item:nth-child(5) a.selected {
+  background-color: #fff;
+}
+
+/*ライブリストの設定*/
+.list-inner-live {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+}

@@ -1,0 +1,216 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+/*基本設定*/
+.live-sch-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color:#efefef ;
+    padding: 0 20px 20px 20px;
+    @include m.breakpoint(tablet){
+        padding: 0 50px 50px 50px;
+    }
+    .page-header{
+        margin: 0 auto;
+        .entry-title{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 30px 10px 0px;
+            @include m.breakpoint(tablet){
+                font-size: 40px;
+                font-weight: bold;
+                margin: 30px 30px 30px 0px;
+            }
+        }
+    }
+    /*tabの形状*/
+    .live-tab{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: flex-start;
+    gap:10px;
+    margin-bottom: 20px;
+    @include m.breakpoint(tablet){
+        justify-content: center;
+        margin-bottom: 0px;
+        margin: 40px;
+        }
+        /*タブの選択時の色*/
+        .tab__item a.selected{
+          background-color: #fff;
+        }
+        li{
+            width: calc((100% - 50px) / 3);
+            text-align: center;
+            @include m.breakpoint(only-tab){
+                width: calc((100% - 80px) / 5);
+            }
+        }
+        li a{
+            display: block;
+            background:#ddd;
+            margin:0 2px;
+            padding:10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 30px;
+            @include m.breakpoint(tablet){
+                font-size: 20px;
+            }
+            @include m.breakpoint(only-tab){
+                padding:10px 20px;
+            }
+        }
+    }
+}
+
+
+
+.live-area{
+    max-width: 1000px;
+    margin: 0 auto;
+    .pagination{
+        text-align: center;
+    }
+}
+
+/*ライブリストの設定*/
+.list-inner-live{
+    display: flex;
+    align-items: flex-start;
+    background:#fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
+    &:hover{
+        box-shadow: 0px 1px 20px rgba(104, 99, 107, 0.9);
+        transform: translateY(4px);
+    }
+    .block_date_inner{
+        text-align: left;
+        padding: 10px;
+        background-color: #010101;
+        color: #ffffff;
+        letter-spacing: 0.03em;
+        border-bottom-right-radius: 20px;
+        .live_date{
+            display: flex;
+            font-size: 10px;
+            .sub-date{
+                -ms-writing-mode: tb-rl;
+                writing-mode: vertical-rl;
+                font-size: 10px;
+                padding-left: 5px;
+            }
+        }
+        .category{
+            font-size: 10px;
+        }
+    }
+    .info-inner{
+        padding-left: 1em;
+        font-size: 15px;
+        letter-spacing: 1px;
+        .tag-wrapper{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            li {
+                text-align: left;
+                margin-top: 0px;
+                font-size: 10px;
+                border: 1px solid;
+                padding: 2px;
+                margin: 2px;
+            }
+        }
+    }
+}
+
+/*ページネーションの設定*/
+/* ページ中央に設置 */
+.pnavi {
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* 現在開いている以外のページのボタン */
+.pagination .page-numbers {
+    display: inline-block;
+    margin-right: 25px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ddd;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* マウスが乗った時の、ボタンの背景の色と文字の色 */
+.pagination a.page-numbers:hover {
+    color: #000;
+    background-color: #999;
+    border-color: #999;
+}
+
+
+/* 現在のページのボタン */
+.pagination .current {
+    padding: 0;
+    background: #ddd;
+    color: #000;
+    font-size: 12px;
+}
+
+/* 前へ、次へ */
+.pagination .prev,
+.pagination .next {
+    border: 1px solid #ddd;
+    color: #ddd;
+    position: relative;
+    font-size: 12px;
+}
+
+.pagination a.next.page-numbers {
+    margin-right: 0;
+}
+
+/*  縦線の共通CSS　*/
+.pagination .next::before,
+.pagination .prev::after {
+    content: "";
+    display: inline-block;
+    width: 0.5px;
+    height: 40px;
+    background-color: rgb(224, 215, 215);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// 「次へ」の前の線
+.pagination .next::before {
+    left: -15px;
+}
+
+// 「前へ」の後の線
+.pagination .prev::after {
+    right: -15px;
+}
+
+/* 数字の間のドット */
+.pagination .dots {
+    background: transparent;
+    border: none;
+}
+
+/*ボタンの設定*/
+.btn-bottom{
+    margin-bottom: 250px;
+}

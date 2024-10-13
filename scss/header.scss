@@ -1,0 +1,216 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+
+/*SP用のハンバーガーとnaviの設定*/
+
+.site-header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 9999;
+    width: 100%;
+    background-color: #efefef;
+}
+
+/*========= ぼかしのためのCSS ===============*/
+
+.mainblur{
+	filter: blur(8px);
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+    position:fixed;
+	z-index: 999;
+	opacity: 0;/*はじめは透過0*/
+    /*ナビの位置と形状*/
+	top:0;
+	width:100%;
+    height:80px;/*ナビの高さ*/
+    /*動き*/
+	transition: all 0.3s;
+}
+
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+#g-nav.panelactive{
+	opacity: 1;
+	z-index:999;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background:rgba(255,255,255,0.3);/*背景を少し透過させる*/
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    display: none;/*はじめは非表示*/
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+#g-nav.panelactive ul {
+    display: block;
+}
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/*========= SP用ロゴ ===============*/
+.sp_logo{
+    position: relative;
+    bottom:5px;
+    margin-left: 20px;
+    @include m.breakpoint(only-tab){
+        display: none;
+    }
+}
+
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #000;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+
+
+@include m.breakpoint(only-tab){
+    .site-header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include m.breakpoint(pc){
+            justify-content: flex-start;
+        }
+        position: relative;
+        z-index: 999;
+        height: 80px;
+        width: 100%;
+        
+        .pc-navi-menu{
+            display: flex;
+            gap:10px;
+            position: relative;
+            z-index: 999;
+            align-items: center;
+            padding: 5px 20px;
+            font-size: 15px;
+            @include m.breakpoint(only-tab){
+                font-size: 20px;
+            }
+            li{
+                font-weight: bold;
+                margin: 10px;
+                a{
+                    display: inline-block;
+                    text-decoration:none;
+                    padding: 5px 10px;
+                    color: #D83E3E;
+                    @include m.breakpoint(pc){
+                        color: #565656;
+                    }
+                    position: relative;
+                    &::after{
+                        content:'';
+                        position: absolute;
+                        top: 50%;
+                        left:10%;
+                        width: 80%;
+                        height: 2px;
+                        background: #D83E3E;
+                        transition: all .3s;
+                        transform: scale(0,1);
+                        transform-origin: center top;
+                        @include m.breakpoint(pc){
+                            background: #000;
+                        }
+                    }
+                }
+            }
+            @at-root .pc-navi-menu li .current a::after,.pc-navi-menu li a:hover::after{
+                transform: scale(1,1);
+            }
+        }
+      }
+}
+
+
+
+
+
